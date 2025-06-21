@@ -27,7 +27,7 @@ export default function Header() {
       <div className="container py-4 flex justify-between items-center">
         <Link href="/" className="z-50">
           <Image
-            src="/images/logo.png"
+            src="/images/logo.jpg"
             alt="Smile Kids Logo"
             width={120}
             height={40}

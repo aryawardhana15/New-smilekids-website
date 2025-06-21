@@ -43,7 +43,7 @@ export default function Hero() {
             </motion.div>
           </div>
           <motion.div
-            className="relative w-full h-64 md:h-full"
+            className="relative w-full h-80 md:h-96 rounded-extra-large shadow-soft-lg overflow-hidden"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -52,9 +52,9 @@ export default function Hero() {
             <Image
               src="/images/hero-bg.jpg"
               alt="Anak-anak bermain ceria di Smile Kids"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-extra-large shadow-soft-lg"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              style={{ objectFit: 'cover' }}
               priority
             />
           </motion.div>

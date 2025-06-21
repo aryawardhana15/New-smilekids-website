@@ -24,6 +24,11 @@ const features = [
     title: "Program Kreatif",
     description: "Kegiatan seni, musik, dan permainan untuk perkembangan anak.",
   },
+   {
+      icon: <GiMusicalNotes />,
+      title: "Kelas Ekstrakurikuler",
+      description: "Qur'an, futsal",
+    },
 ];
 
 const services = [
@@ -36,11 +41,6 @@ const services = [
       icon: <GiPersonInBed />,
       title: "Penitipan Anak",
       description: "Penitipan harian dengan pengawasan penuh kasih.",
-    },
-    {
-      icon: <GiMusicalNotes />,
-      title: "Kelas Ekstrakurikuler",
-      description: "Kelas seni, musik, dan olahraga untuk anak.",
     },
   ];
 

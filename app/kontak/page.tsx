@@ -1,3 +1,5 @@
+'use client';
+
 import PageHeader from "@/components/PageHeader";
 import ContactForm from "@/components/ContactForm";
 import WhatsAppButton from "@/components/WhatsAppButton";

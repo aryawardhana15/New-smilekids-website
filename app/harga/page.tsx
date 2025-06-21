@@ -1,3 +1,5 @@
+'use client';
+
 import PageHeader from "@/components/PageHeader";
 import PricingTable from "@/components/PricingTable";
 import { motion } from 'framer-motion';
