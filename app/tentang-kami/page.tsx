@@ -5,12 +5,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const galleryImages = [
-    { src: '/images/gallery1.jpg', alt: 'Kegiatan belajar di kelas' },
-    { src: '/images/gallery2.jpg', alt: 'Anak-anak bermain di luar ruangan' },
-    { src: '/images/gallery3.jpg', alt: 'Pentas seni anak-anak' },
-    { src: '/images/gallery4.jpg', alt: 'Suasana ruang bermain' },
-    { src: '/images/gallery5.jpg', alt: 'Momen makan siang bersama' },
-    { src: '/images/gallery6.jpg', alt: 'Anak-anak belajar musik' },
+    { src: '/images/kegiatan1.jpg', alt: 'Kegiatan belajar di kelas' },
+    { src: '/images/kegiatan2.jpg', alt: 'Anak-anak bermain di luar ruangan' },
+    { src: '/images/kegiatan3.jpg', alt: 'Pentas seni anak-anak' },
+    { src: '/images/kegiatan4.jpg', alt: 'Suasana ruang bermain' },
+    { src: '/images/kegiatan5.jpg', alt: 'Momen makan siang bersama' },
+    { src: '/images/kegiatan6.jpg', alt: 'Anak-anak belajar musik' },
 ]
 
 const sectionVariants = {

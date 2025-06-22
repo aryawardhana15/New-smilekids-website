@@ -82,7 +82,7 @@ export default function Home() {
         <motion.h2 variants={sectionVariants} className="text-center mb-12">
           Keunggulan Smile Kids
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <ServiceCard
               key={index}
@@ -98,7 +98,7 @@ export default function Home() {
         <motion.h2 variants={sectionVariants} className="text-center mb-12">
           Layanan Kami
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
                 <ServiceCard 
                     key={index}
