@@ -4,31 +4,27 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('submitting');
     
+    const formData = new FormData(e.currentTarget);
+    
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://formspree.io/f/xeoklyop', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: formData,
       });
 
-      if (!response.ok) {
-        throw new Error('Gagal mengirim pesan.');
+      if (response.ok) {
+        setStatus('success');
+        e.currentTarget.reset();
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        throw new Error('Gagal mengirim pesan');
       }
-
-      console.log('Form data submitted:', formData);
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      // Reset status after a few seconds
-      setTimeout(() => setStatus('idle'), 5000);
     } catch (error) {
       console.error('Submit error:', error);
       setStatus('error');
@@ -48,10 +44,9 @@ export default function ContactForm() {
           <label htmlFor="name" className="block text-brand-text-secondary mb-2 font-bold">Nama</label>
           <input
             id="name"
+            name="name"
             type="text"
             className="w-full p-3 rounded-large border border-gray-300 focus:ring-2 focus:ring-brand-secondary focus:border-transparent outline-none transition-all"
-            value={formData.name}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             required
             placeholder="Nama Lengkap Anda"
           />
@@ -60,10 +55,9 @@ export default function ContactForm() {
           <label htmlFor="email" className="block text-brand-text-secondary mb-2 font-bold">Email</label>
           <input
             id="email"
+            name="email"
             type="email"
             className="w-full p-3 rounded-large border border-gray-300 focus:ring-2 focus:ring-brand-secondary focus:border-transparent outline-none transition-all"
-            value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             required
             placeholder="email@anda.com"
           />
@@ -72,10 +66,9 @@ export default function ContactForm() {
           <label htmlFor="message" className="block text-brand-text-secondary mb-2 font-bold">Pesan</label>
           <textarea
             id="message"
+            name="message"
             className="w-full p-3 rounded-large border border-gray-300 focus:ring-2 focus:ring-brand-secondary focus:border-transparent outline-none transition-all"
             rows={5}
-            value={formData.message}
-            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
             required
             placeholder="Tuliskan pertanyaan atau pesan Anda di sini..."
           ></textarea>
@@ -87,8 +80,20 @@ export default function ContactForm() {
         >
           {status === 'submitting' ? 'Mengirim...' : 'Kirim Pesan'}
         </button>
-        {status === 'success' && <p className="text-green-600 mt-4 text-center">Pesan Anda telah berhasil terkirim! Kami akan segera menghubungi Anda.</p>}
-        {status === 'error' && <p className="text-red-600 mt-4 text-center">Maaf, terjadi kesalahan. Silakan coba lagi.</p>}
+        {status === 'success' && (
+          <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-large">
+            <p className="text-green-700 text-center font-medium">
+              ✅ Pesan Anda telah berhasil terkirim! Kami akan segera menghubungi Anda.
+            </p>
+          </div>
+        )}
+        {status === 'error' && (
+          <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-large">
+            <p className="text-green-700 text-center font-medium">
+             ✅ Pesan Anda telah berhasil terkirim! Kami akan segera menghubungi Anda.
+            </p>
+          </div>
+        )}
       </form>
     </motion.div>
   );

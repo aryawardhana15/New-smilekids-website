@@ -8,16 +8,16 @@ import { FaWhatsapp, FaRegFileAlt, FaBaby, FaChild, FaBookOpen, FaMoneyBillWave,
 export default function HargaPage() {
   return (
     <main>
-      <PageHeader
+        <PageHeader 
         title="Biaya & Pendaftaran"
         subtitle="Informasi lengkap mengenai biaya layanan dan persyaratan pendaftaran di Smile Kids."
-      />
-      <motion.section
+        />
+        <motion.section 
         className="py-16 md:py-24 bg-gray-50"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
+            transition={{ duration: 0.5, delay: 0.2 }}
+        >
         <div className="container mx-auto px-4">
 
           {/* Pricing Section */}
@@ -84,8 +84,8 @@ export default function HargaPage() {
               </a>
             </div>
           </div>
-        </div>
-      </motion.section>
+            </div>
+        </motion.section>
     </main>
   );
 } 
