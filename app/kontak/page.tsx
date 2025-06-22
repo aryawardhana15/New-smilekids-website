@@ -7,9 +7,9 @@ import { FaMapMarkerAlt, FaClock, FaPhoneAlt } from 'react-icons/fa';
 import { motion } from "framer-motion";
 
 const contactInfo = [
-    { icon: <FaMapMarkerAlt />, text: "Jl. Ceria No. 123, Jakarta" },
+    { icon: <FaMapMarkerAlt />, text: "Jl. MT Haryono Griya Tumaritis 1 No 16 Balikpapan" },
     { icon: <FaClock />, text: "Senin - Jumat, 07:00 - 17:00" },
-    { icon: <FaPhoneAlt />, text: "+62 812 3456 7890" },
+    { icon: <FaPhoneAlt />, text: "+62 813 4643 8704" },
 ];
 
 const containerVariants = {
@@ -57,7 +57,7 @@ export default function KontakPage() {
                     <WhatsAppButton />
                     <div className="mt-8 rounded-extra-large overflow-hidden shadow-soft">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.123456789!2d106.823456!3d-6.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDcnMjMuMCJTIDEwNsKwNDknMjQuMCJF!5e0!3m2!1sen!2sid!4v1234567890123"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9071157752824!2d116.8673329735002!3d-1.2245521355586975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df1471af2ba9053%3A0x56906e6f07302d4f!2sPAUD%20Smile%20Kids!5e0!3m2!1sen!2sid!4v1750568472906!5m2!1sen!2sid" 
                             width="100%"
                             height="350"
                             style={{ border: 0 }}

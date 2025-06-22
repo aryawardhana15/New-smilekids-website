@@ -10,7 +10,7 @@ import clsx from 'clsx';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/layanan', label: 'Layanan' },
+  { href: '/layanan', label: 'Program Kami' },
   { href: '/harga', label: 'Harga' },
   { href: '/tentang-kami', label: 'Tentang Kami' },
   { href: '/kontak', label: 'Kontak' },

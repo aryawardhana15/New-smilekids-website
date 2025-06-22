@@ -10,13 +10,29 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    // In a real app, you would send the data to an API endpoint here.
-    // For now, we just simulate success.
-    console.log('Form data submitted:', formData);
-    setStatus('success');
-    setFormData({ name: '', email: '', message: '' });
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Gagal mengirim pesan.');
+      }
+
+      console.log('Form data submitted:', formData);
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+      // Reset status after a few seconds
+      setTimeout(() => setStatus('idle'), 5000);
+    } catch (error) {
+      console.error('Submit error:', error);
+      setStatus('error');
+    }
   };
 
   return (

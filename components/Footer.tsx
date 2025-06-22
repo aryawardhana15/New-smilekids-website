@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaWhatsapp, FaTiktok } from 'react-icons/fa';
 
 const socialLinks = [
-  { href: 'https://instagram.com', icon: FaInstagram, label: 'Instagram' },
-  { href: 'https://facebook.com', icon: FaFacebookF, label: 'Facebook' },
-  { href: 'https://wa.me/6281234567890', icon: FaWhatsapp, label: 'WhatsApp' },
+  { href: 'https://www.instagram.com/kb_smilekids?utm_source=ig_web_button_share_sheet&igsh=MXBhOHdvb2UxZXY2MQ==', icon: FaInstagram, label: 'Instagram' },
+  { href: 'https://www.tiktok.com/@kb.smile.kids?_t=ZS-8xPPsyawKaQ&_r=1', icon: FaTiktok, label: 'Tiktok' },
+  { href: 'https://wa.me/6281346438704', icon: FaWhatsapp, label: 'WhatsApp' },
 ];
 
 export default function Footer() {
@@ -44,8 +44,8 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-xl mb-4 text-white">Hubungi Kami</h3>
             <address className="not-italic text-sm text-gray-200 space-y-3">
-              <p>Jl. Ceria No. 123, Jakarta</p>
-              <p>+62 812 3456 7890</p>
+              <p>Jl. MT Haryono Griya Tumaritis 1 no 16, Balikpapan</p>
+              <p>+62 813 4643 8704</p>
             </address>
             <div className="flex justify-center md:justify-start space-x-4 mt-6">
               {socialLinks.map((social) => (
