@@ -23,16 +23,18 @@ export default function Header() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header className="sticky top-0 z-50 bg-brand-white/80 backdrop-blur-md shadow-soft">
+    <header className="sticky top-0 z-50 bg-yellow-50/90 backdrop-blur-md shadow-soft border-b border-yellow-100">
       <div className="container py-4 flex justify-between items-center">
-        <Link href="/" className="z-50">
+        <Link href="/" className="z-50 flex items-center ">
           <Image
-            src="/images/logo.jpg"
+            src="/images/logo remove.png"
             alt="Smile Kids Logo"
             width={120}
             height={40}
             priority
+            className="w-20 h-auto md:w-32"
           />
+          <span className="ml-2 text-lg md:text-2xl font-bold select-none" style={{ fontFamily: 'Comic Sans MS, Comic Sans, cursive', color: '#FFC94A' }}>SMILE KIDS</span>
         </Link>
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
@@ -41,13 +43,13 @@ export default function Header() {
               href={link.href}
               className={clsx(
                 "font-bold transition-colors duration-300 relative",
-                pathname === link.href ? "text-brand-primary" : "text-brand-text-secondary hover:text-brand-primary"
+                pathname === link.href ? "text-yellow-500" : "text-blue-400 hover:text-yellow-500"
               )}
             >
               {link.label}
               {pathname === link.href && (
                 <motion.div
-                  className="absolute -bottom-2 left-0 right-0 h-1 bg-brand-accent rounded-full"
+                  className="absolute -bottom-2 left-0 right-0 h-1 bg-pink-300 rounded-full"
                   layoutId="underline"
                   initial={false}
                 />

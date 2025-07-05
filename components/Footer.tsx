@@ -10,7 +10,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-primary text-white mt-16">
+    <footer className="bg-yellow-100 text-yellow-900 mt-16 border-t border-yellow-200">
       <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
           {/* About Section */}
@@ -23,27 +23,27 @@ export default function Footer() {
               height={50}
               className="mb-4"
             /> */}
-            <h3 className="text-2xl font-bold mb-2 text-white">Smile Kids</h3>
-            <p className="text-sm text-gray-200 max-w-xs">
+            <h3 className="text-2xl font-bold mb-2 text-yellow-700">Smile Kids</h3>
+            <p className="text-sm text-yellow-800 max-w-xs">
               Tempat bermain dan belajar anak dengan suasana ceria, aman, dan penuh kasih sayang.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-bold text-xl mb-4 text-white">Link Cepat</h3>
+            <h3 className="font-bold text-xl mb-4 text-blue-500">Link Cepat</h3>
             <ul className="space-y-3">
-              <li><Link href="/layanan" className="hover:text-brand-secondary transition-colors duration-300">Layanan</Link></li>
-              <li><Link href="/harga" className="hover:text-brand-secondary transition-colors duration-300">Harga</Link></li>
-              <li><Link href="/tentang-kami" className="hover:text-brand-secondary transition-colors duration-300">Tentang Kami</Link></li>
-              <li><Link href="/kontak" className="hover:text-brand-secondary transition-colors duration-300">Kontak</Link></li>
+              <li><Link href="/layanan" className="hover:text-yellow-500 transition-colors duration-300">Layanan</Link></li>
+              <li><Link href="/harga" className="hover:text-yellow-500 transition-colors duration-300">Harga</Link></li>
+              <li><Link href="/tentang-kami" className="hover:text-yellow-500 transition-colors duration-300">Tentang Kami</Link></li>
+              <li><Link href="/kontak" className="hover:text-yellow-500 transition-colors duration-300">Kontak</Link></li>
             </ul>
           </div>
 
           {/* Contact & Social */}
           <div>
-            <h3 className="font-bold text-xl mb-4 text-white">Hubungi Kami</h3>
-            <address className="not-italic text-sm text-gray-200 space-y-3">
+            <h3 className="font-bold text-xl mb-4 text-pink-500">Hubungi Kami</h3>
+            <address className="not-italic text-sm text-yellow-800 space-y-3">
               <p>Jl. MT Haryono Griya Tumaritis 1 no 16, Balikpapan</p>
               <p>+62 813 4643 8704</p>
             </address>
@@ -55,7 +55,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="text-white hover:text-brand-secondary transition-colors duration-300"
+                  className="text-yellow-500 hover:text-pink-400 transition-colors duration-300"
                 >
                   <social.icon size={24} />
                 </a>
@@ -63,7 +63,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-white/20 pt-6 text-center text-sm text-gray-300">
+        <div className="mt-12 border-t border-yellow-200 pt-6 text-center text-sm text-yellow-700">
           <p>&copy; {new Date().getFullYear()} Smile Kids. All rights reserved.</p>
         </div>
       </div>

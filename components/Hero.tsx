@@ -21,7 +21,7 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-brand-background py-20 md:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-b from-yellow-50 via-white to-yellow-100 py-20 md:py-32">
       <div className="container relative z-10">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
@@ -30,14 +30,16 @@ export default function Hero() {
           animate="visible"
         >
           <div className="text-center md:text-left">
-            <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl font-black text-brand-primary mb-4">
+            <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl font-black text-yellow-600 mb-4 flex items-center justify-center md:justify-start gap-2">
+              <span role="img" aria-label="sparkles">✨</span>
               Tempat Ceria untuk Tumbuh & Belajar
+              <span role="img" aria-label="balloon">🎈</span>
             </motion.h1>
-            <motion.p variants={itemVariants} className="text-lg text-brand-text-secondary mb-8 max-w-md mx-auto md:mx-0">
+            <motion.p variants={itemVariants} className="text-lg text-yellow-800 mb-8 max-w-md mx-auto md:mx-0">
               Di Smile Kids, kami menciptakan lingkungan yang aman, menyenangkan, dan penuh inspirasi bagi putra-putri Anda.
             </motion.p>
             <motion.div variants={itemVariants}>
-              <Link href="/kontak" className="btn-primary inline-block">
+              <Link href="/kontak" className="btn-primary inline-block animate-bounce hover:scale-110 transition-transform duration-300">
                 Daftar Sekarang
               </Link>
             </motion.div>
@@ -61,8 +63,10 @@ export default function Hero() {
         </motion.div>
       </div>
       {/* Decorative Shapes */}
-      <div className="absolute top-0 left-0 w-32 h-32 bg-brand-secondary/50 rounded-full filter blur-xl opacity-50 -translate-x-10 -translate-y-10"></div>
-      <div className="absolute bottom-0 right-0 w-48 h-48 bg-brand-accent/40 rounded-full filter blur-xl opacity-50 translate-x-10 translate-y-10"></div>
+      <div className="absolute top-10 left-10 w-16 h-16 bg-yellow-200/60 rounded-full filter blur-md animate-pulse z-0" style={{animationDuration: '4s'}}></div>
+      <div className="absolute bottom-10 right-10 w-24 h-24 bg-pink-200/40 rounded-full filter blur-lg animate-spin-slow z-0" style={{animationDuration: '12s'}}></div>
+      <div className="absolute top-1/2 left-1/4 w-10 h-10 bg-blue-100/80 rounded-full shadow-lg animate-bounce-slow z-0 flex items-center justify-center text-2xl" style={{animationDuration: '6s'}}>340</div>
+      <div className="absolute bottom-1/3 right-1/3 w-8 h-8 bg-yellow-100/80 rounded-full shadow-lg animate-bounce-slow z-0 flex items-center justify-center text-xl" style={{animationDuration: '7s'}}>31f</div>
     </section>
   );
 } 

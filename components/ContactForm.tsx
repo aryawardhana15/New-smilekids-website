@@ -33,41 +33,41 @@ export default function ContactForm() {
 
   return (
     <motion.div 
-        className="card w-full"
+        className="card w-full bg-white/90 border-2 border-yellow-100"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
     >
-      <h2 className="text-2xl font-bold mb-6 text-center text-brand-primary">Kirim Pesan kepada Kami</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center text-yellow-600">Kirim Pesan kepada Kami</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label htmlFor="name" className="block text-brand-text-secondary mb-2 font-bold">Nama</label>
+          <label htmlFor="name" className="block text-yellow-800 mb-2 font-bold">Nama</label>
           <input
             id="name"
             name="name"
             type="text"
-            className="w-full p-3 rounded-large border border-gray-300 focus:ring-2 focus:ring-brand-secondary focus:border-transparent outline-none transition-all"
+            className="w-full p-3 rounded-large border border-yellow-200 focus:ring-2 focus:ring-yellow-300 focus:border-transparent outline-none transition-all"
             required
             placeholder="Nama Lengkap Anda"
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="email" className="block text-brand-text-secondary mb-2 font-bold">Email</label>
+          <label htmlFor="email" className="block text-yellow-800 mb-2 font-bold">Email</label>
           <input
             id="email"
             name="email"
             type="email"
-            className="w-full p-3 rounded-large border border-gray-300 focus:ring-2 focus:ring-brand-secondary focus:border-transparent outline-none transition-all"
+            className="w-full p-3 rounded-large border border-yellow-200 focus:ring-2 focus:ring-yellow-300 focus:border-transparent outline-none transition-all"
             required
             placeholder="email@anda.com"
           />
         </div>
         <div className="mb-6">
-          <label htmlFor="message" className="block text-brand-text-secondary mb-2 font-bold">Pesan</label>
+          <label htmlFor="message" className="block text-yellow-800 mb-2 font-bold">Pesan</label>
           <textarea
             id="message"
             name="message"
-            className="w-full p-3 rounded-large border border-gray-300 focus:ring-2 focus:ring-brand-secondary focus:border-transparent outline-none transition-all"
+            className="w-full p-3 rounded-large border border-yellow-200 focus:ring-2 focus:ring-yellow-300 focus:border-transparent outline-none transition-all"
             rows={5}
             required
             placeholder="Tuliskan pertanyaan atau pesan Anda di sini..."

@@ -57,43 +57,48 @@ export default function TestimonialSlider() {
   const { name, text, avatar } = testimonials[activeIndex];
 
   return (
-    <section className="py-16 md:py-24 bg-brand-background">
+    <section className="py-16 bg-yellow-50">
       <div className="container">
-        <h2 className="text-center mb-12">Apa Kata Orang Tua?</h2>
-        <div className="card max-w-3xl mx-auto text-center !rounded-extra-large overflow-hidden">
-            <div className="relative h-48 w-full">
-                 <AnimatePresence initial={false} custom={direction}>
-                    <motion.div
-                        key={activeIndex}
-                        custom={direction}
-                        variants={sliderVariants}
-                        initial="incoming"
-                        animate="active"
-                        exit="outgoing"
-                        className="absolute w-full h-full p-8 flex flex-col items-center justify-center"
-                    >
-                        <FaQuoteLeft className="absolute top-4 left-4 text-brand-accent/30 text-3xl" />
-                        <p className="text-lg italic text-brand-text-secondary mb-4">
-                            "{text}"
-                        </p>
-                        <div className="flex items-center mt-4">
-                            <Image src={avatar} alt={name} width={48} height={48} className="rounded-full mr-4" />
-                            <p className="font-bold text-brand-primary">{name}</p>
-                        </div>
-                        <FaQuoteRight className="absolute bottom-4 right-4 text-brand-accent/30 text-3xl" />
-                    </motion.div>
-                 </AnimatePresence>
-            </div>
-            <div className="flex justify-center pb-4">
-                {testimonials.map((_, index) => (
-                    <button
-                        key={index}
-                        onClick={() => setActiveIndex([index, index > activeIndex ? 'next' : 'prev'])}
-                        className={`w-3 h-3 rounded-full mx-1 transition-colors ${activeIndex === index ? 'bg-brand-accent' : 'bg-gray-300 hover:bg-gray-400'}`}
-                        aria-label={`Go to testimonial ${index + 1}`}
-                    />
-                ))}
-            </div>
+        <h2 className="text-3xl font-bold text-yellow-600 mb-10 text-center">Testimoni Orang Tua</h2>
+        <div className="relative">
+          <button
+            className="absolute left-0 top-1/2 -translate-y-1/2 bg-yellow-200 text-yellow-700 rounded-full p-3 shadow hover:bg-yellow-300 transition-colors z-10"
+            onClick={() => setActiveIndex([activeIndex === 0 ? testimonials.length - 1 : activeIndex - 1, 'prev'])}
+            aria-label="Sebelumnya"
+          >
+            &#8592;
+          </button>
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex"
+              style={{ x: `calc(-${activeIndex * 100}%)` }}
+            >
+              {testimonials.map((testimonial, idx) => (
+                <motion.div
+                  key={idx}
+                  className="min-w-full px-4 md:px-8"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="bg-white/90 border-2 border-yellow-100 rounded-2xl shadow-md p-8 flex flex-col items-center">
+                    <p className="text-lg text-yellow-800 mb-6 text-center">"{testimonial.text}"</p>
+                    <div className="flex items-center gap-4">
+                      <span className="font-bold text-yellow-700">{testimonial.name}</span>
+                      <span className="text-yellow-500">{testimonial.role}</span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+          <button
+            className="absolute right-0 top-1/2 -translate-y-1/2 bg-yellow-200 text-yellow-700 rounded-full p-3 shadow hover:bg-yellow-300 transition-colors z-10"
+            onClick={() => setActiveIndex([activeIndex === testimonials.length - 1 ? 0 : activeIndex + 1, 'next'])}
+            aria-label="Berikutnya"
+          >
+            &#8594;
+          </button>
         </div>
       </div>
     </section>
